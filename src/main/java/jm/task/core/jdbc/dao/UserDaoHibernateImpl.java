@@ -82,11 +82,11 @@ public class UserDaoHibernateImpl implements UserDao {
             User user = (User) session.get(User.class, id);
             session.delete(user);
             transaction.commit();
-        } catch (Exception e) {
+        } catch (Exception f) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            e.printStackTrace();
+            f.printStackTrace();
         }
 
     }
